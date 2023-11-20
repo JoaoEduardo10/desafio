@@ -1,3 +1,5 @@
+import { MultiplesSumCalculatorValidation } from '../app/utils/validationMutiples';
+
 class MultiplesSumCalculator {
   private DIVISOR_3: number;
   private DIVISOR_5: number;
@@ -12,6 +14,8 @@ class MultiplesSumCalculator {
   }
 
   public sumOfMultiplesBelowNumber(number: number) {
+    MultiplesSumCalculatorValidation.validation(number);
+
     let sum = 0;
 
     for (let index = 1; index < number; index++) {
