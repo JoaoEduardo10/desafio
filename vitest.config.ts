@@ -7,6 +7,7 @@ export default defineConfig({
     environment: 'node',
     coverage: {
       provider: 'v8',
+      exclude: ['src/app/errors', 'src/app/middleware/g*.ts'],
     },
     setupFiles: ['tests/vitest.setup.ts'],
   },

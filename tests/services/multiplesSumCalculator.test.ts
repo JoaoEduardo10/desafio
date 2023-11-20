@@ -49,7 +49,7 @@ describe('multiplesSumCalculator.ts', () => {
     }
   });
 
-  it('This should rectify an error by sending an integer', () => {
+  it('should rectify an error by sending an integer', () => {
     const calculator = new MultiplesSumCalculator();
 
     try {
