@@ -35,6 +35,8 @@ const handleClickButton = async () => {
     return;
   }
 
+  input.value = '';
+
   total.innerHTML = data.total;
 };
 
