@@ -1,0 +1,74 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Somar mutiplos de numeros inteiros",
+    "description": "Plataforma de API para recebe um número inteiro e retorna o somatório de todos os valores inteiros divisíveis por 3 e por 5, que sejam inferiores ao número fornecido",
+    "termsOfService": "João Eduardo",
+    "contact": {
+      "email": "joaoeduardoj920@gmail.com",
+      "celular": "(86) 98132-0524"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/v1",
+      "description": "Api de desenvolvimento"
+    }
+  ],
+  "paths": {
+    "/mutiples": {
+      "post": {
+        "summary": "Retorna a soma",
+        "description": "Retorna a soma do número, incluindo apenas aqueles que são divisíveis por 3 e 5.",
+        "tags": ["mutiplos"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "example": {
+                "number": 10
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Retorna a soma do numero com sucesso!",
+            "content": {
+              "application/json": {
+                "example": {
+                  "total": 23
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erros esperado caso: não adicione o numero, mande uma string ou não adicione um numero inteiro",
+            "content": {
+              "application/json": {
+                "example": [
+                  {
+                    "error": "Adicione um numero"
+                  },
+                  {
+                    "error": "O número deve ser positivo e inteiro."
+                  }
+                ]
+              }
+            }
+          },
+          "500": {
+            "description": "Erros inesperados pela api",
+            "content": {
+              "application/json": {
+                "example": {
+                  "error": "erro qualquer"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
